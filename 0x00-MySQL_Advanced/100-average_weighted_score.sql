@@ -1,4 +1,4 @@
--- creates a stored procedure ComputeAverageWeightedScoreForUser
+-- creates a stored procedure ComputeAverageWeightedScoreForUser(a student)
 DELIMITER $$
 CREATE PROCEDURE ComputeAverageWeightedScoreForUser (IN user_id INT)
 BEGIN
