@@ -53,11 +53,9 @@ def replay(self, method: Callable):
         print("s", end="")
     print(":")
 
-    for i, (input_args, output) in enumerate(zip(inputs,
-                                                 outputs), start=1):
-        print("{}(*{}) -> {}"
-              .format(i, input_args.decode('utf-8',
-                                           output.decode('utf-8'))))
+    for i, j in zip(inputs, outputs):
+        print("{}(*{}) -> {}".format(input_key,
+                                     i.decode('utf-8', j.decode('utf-8'))))
 
 
 class Cache:
