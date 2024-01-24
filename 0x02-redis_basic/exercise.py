@@ -46,6 +46,12 @@ def replay(self, method: Callable):
 
     inputs = self._redis.lrange(input_key, 0, -1)
     outputs = self._redis.lrange(output_key, 0, -1)
+    n_calls = len(inputs)
+
+    print("{} was called {} time".format(input_key, n_calls), end="")
+    if n_calls > 1:
+        print("s", end="")
+    print(":")
 
     for i, (input_args, output) in enumerate(zip(inputs,
                                                  outputs), start=1):
